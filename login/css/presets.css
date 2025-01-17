@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.background {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/login/images/background.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.time, .date, .creator {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.credits {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    color: white;
+    font-size: 12px; 
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: lightblue;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(150, 150, 150, 0.1);
+}
+
+
+.left_container, .right_container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left_container {
+    border-right: 1px solid white;
+}
+
+.right_container {
+    padding: 20px;
+    position: relative;
+}
+
+.pfp {
+    width: 200px;
+    height: 201px;
+    position: absolute;
+    animation: switch 2s infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.pfp2 {
+    width: 210px;
+    height: 209.5px;
+    position: absolute;
+    animation: switch 2s infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.pfp {
+    animation-delay: 0s;
+}
+
+.pfp2 {
+    animation-delay: 1s;
+}
+
+@keyframes switch {
+    0%, 50% {
+        opacity: 1;
+    }
+    50.01%, 100% {
+        opacity: 0;
+    }
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: none;
+}
+
+#username, #password {
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgba(150, 150, 150, 0.1);
+    color:white; 
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#username:focus, 
+#password:focus {
+    outline: none;
+}
+
+#username::placeholder,
+#password::placeholder {
+    color: white;
+    font-weight: lighter;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+

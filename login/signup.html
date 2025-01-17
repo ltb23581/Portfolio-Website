@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/presets.css">
+    <title>Signup</title>
+
+    <!-- Firebase CDN for modules -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js"></script>
+
+    <script type="module" src="./javascript/firebase.js" defer></script>
+</head>
+<body>
+    <img class="background" src="./images/background.gif" alt="background_image">
+
+    <div class="wrapper">
+        <div class="center">
+            <div class="left_container"> 
+                <img class="pfp" src="./images/pfp.png" alt="pfp">
+                <img class="pfp2" src="./images/pfp2.png" alt="pfp">
+            </div>
+        
+            <div class="right_container">
+                <form id="signup-form" autocomplete="off">
+                    <label for="username"></label>
+                    <input type="text" id="username" name="username" placeholder="username" autocomplete="username" required><br>
+                
+                    <div class="password-container">
+                        <label for="password"></label>
+                        <input type="password" id="password" name="password" placeholder="password" autocomplete="new-password" required>
+                    </div>
+                
+                    <button type="button" id="registerButton">Register</button>
+
+                    <p class="login_link">
+                        <a href="login.html">To Existing Account</a>
+                    </p>
+                </form>
+            </div>    
+        </div>
+    </div>
+
+    <div class="credits">
+        <p>Background Artist: @anasabdin</p>
+    </div>
+</body>
+</html>

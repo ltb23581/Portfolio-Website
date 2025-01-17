@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/presets.css">
+    <title>Login</title>
+</head>
+<body>
+    <img class="background" src="./images/background.gif" alt="background_image">
+
+    <div class="wrapper">
+        <div class="center">
+            <div class="left_container"> 
+                <img class="pfp" src="./images/pfp.png" alt="pfp">
+                <img class="pfp2" src="./images/pfp2.png" alt="pfp">
+            </div>
+        
+            <div class="right_container">
+                <form id="login-form" autocomplete="off">
+                    <label for="username"></label>
+                    <input type="text" id="username" name="username" placeholder="username" autocomplete="username" required><br>
+                
+                    <div class="password-container">
+                        <label for="password"></label>
+                        <input type="text" id="password" name="password" placeholder="password" autocomplete="current-password" required>
+                    </div>
+                
+                    <button type="button" id="loginButton">Login</button>
+                
+
+                    <!--TODO: Make it so that when a user creates their own account, they can login to their "own" desktop-->
+                    <!-- <p class="signup_link">
+                        <a href="signup.html">Create New Account</a>
+                    </p> -->
+
+                    <!-- <p class="forgot_password">
+                        <a href="password.html">Forgot Password?</a>
+                    </p> -->
+                </form>
+            </div>    
+        </div>
+    </div>
+
+</body>
+<script type="module" src="./javascript/firebase.js" defer></script>
+<script type="module" src="./javascript/login.js" defer></script>
+</html>

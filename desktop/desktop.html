@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/desktop.css" />
+    <link rel="stylesheet" href="./css/web.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/featured.css" />
+    <link rel="stylesheet" href="./css/timeline.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <title>Lindsay's Desktop</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  </head>
+
+  <body>
+    <!-- Background Img -->
+    <img
+      class="background"
+      src="./images/animated/background1.gif"
+      alt="background_image"
+    />
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+      <img
+        class="logout"
+        id="logoutButton"
+        src="./images/taskbar/logout.png"
+        alt="logout icon"
+        title="Logout"
+      />
+
+      <img
+        class="file"
+        src="./images/taskbar/folder.png"
+        alt="file explorer icon"
+        title="Files"
+      />
+
+      <img
+        class="web"
+        src="./images/taskbar/web.png"
+        alt="web icon"
+        title="Web"
+      />
+
+      <img
+        class="wallpaper"
+        src="./images/taskbar/wallpaper.png"
+        alt="wallpaper icon"
+        title="Wallpaper"
+      />
+
+      <img
+        class="music"
+        src="./images/taskbar/tunes.png"
+        alt="music icon"
+        title="Tunes"
+      />
+    </div>
+
+    <!-- Files Popup -->
+    <div class="popup" id="filePopup">
+      <div class="popup-content">
+        <!-- Top Bar -->
+        <div class="top">
+          <div class="title">Files</div>
+          <span class="close-popup" id="closeFilePopup">&times;</span>
+        </div>
+
+        <!-- File Grid -->
+        <div class="file-grid">
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>UGA Misc</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 1301 - Intro to Computing</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 1302 - Software Development</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 1730 - Systems Programming</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 2720 - Data Structures</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 4720 - Comp. Arch. Organization</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 4060 - Mobile Software Development</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>NMIX 4020 - Advanced Web Development</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 4300 - Web Development</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>CSCI 4300</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>Photos</p>
+          </div>
+          <div class="file-item">
+            <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+            <p>Misc</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Content -->
+    <div class="desktop-file">
+      <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+      <p class="ugaMisc">UGA Misc</p>
+    </div>
+    <div class="desktop-file">
+      <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+      <p>CSCI 4060 - Mobile Software Development</p>
+    </div>
+    <div class="desktop-file">
+      <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+      <p>CSCI 4300 - Web Development</p>
+    </div>
+    <div class="desktop-file">
+      <img src="./images/files/folder_icon.png" alt="Folder Icon" />
+      <p>NMIX 4020 - Advanced Web Development</p>
+    </div>
+
+    <!-- Web Content (Popup) -->
+    <!-- Refer to web.css -->
+    <div id="app">
+      <div class="popup" id="webPopup">
+        <div class="popup-content">
+          <!-- Top Bar -->
+          <div class="tabs-container">
+            <ul class="tabs">
+              <li
+                v-for="tab in tabs"
+                :key="tab.id"
+                :class="{ active: activeTab === tab.id }"
+                @click="switchTab(tab.id)"
+                class="tab"
+                :data-tab-target="tab.id"
+              >
+                {{ tab.label }}
+              </li>
+            </ul>
+            <span class="close-popup" id="closeWebPopup">&times;</span>
+          </div>
+
+          <!-- Tab content -->
+          <div class="tab-content">
+            <div
+              v-for="tab in tabs"
+              :key="tab.id"
+              :id="tab.id"
+              class="tab-pane"
+              v-show="activeTab === tab.id"
+            >
+              <!-- About Me -->
+              <div v-if="tab.id === 'about'">
+                <div class="about-header">
+                  <!-- Top Section (intro)-->
+                  <div class="about-container-1">
+                    <div class="about-header-1">
+                      <h1 class="eng">
+                        <span class="type"></span>
+                      </h1>
+                      <!-- !!!!!!!!!!!!!!! Find new download icon !!!!!!!!!!!!!!!!!!-->
+                      <!-- <img class="about-resume" src="./images/web/download.gif" title="Download Resume">  -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Beginning of bottom content -->
+                <div class="about-container-2">
+                  <div class="about-c2-left">
+                    <img src="./images/web/placeholder.jpg" />
+                  </div>
+
+                  <div class="about-c2-right">
+                    <h4>About Me</h4>
+                    <h2>I'm a Computer Science student</h2>
+                    <p>
+                      Welcome to my portfolio! My name is Lindsay Bui, and I am
+                      a third-year computer science student concentrating in
+                      software design at the University of Georgia. Alongside my
+                      major, I am pursuing the New Media Certificate
+                      (Development track) and am a member of the UGA CyberArch
+                      Academy.
+                    </p>
+                    <p>
+                      In addition to my passion for technology, I also have a
+                      love for learning about different cultures. Through high
+                      school to now, I studied Spanish for one year and Japanese
+                      and Korean for two. I am of Vietnamese descent; however, I
+                      wasn't fully taught the language growing up, so I only
+                      know basic vocabulary and conversation. Currently, my
+                      strongest language, aside from English (which is my native
+                      language), is Korean. During the Spring 2025 term, I plan
+                      to study at Korea University to strengthen my cultural and
+                      language skills while continuing my studies in computer
+                      science.
+                    </p>
+                    <p>
+                      Growing up in a household of six, I was always known as
+                      the "creative child." When it came time to choose a major,
+                      I found myself torn between two options: architecture and
+                      computer science. I loved art and design but also dreamed
+                      of pursuing coding. Ultimately, I chose computer science,
+                      a field that allows me to blend my creative passion with
+                      my technical skills in web, app, and game development.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="about-container-3">
+                  <h2 class="about-c3-title">What I'm interested in</h2>
+                  <!-- Subcontainers -->
+                  <div class="subcontainers">
+                    <div class="about-subc-1">
+                      <img src="./images/web/web dev.png" />
+                      <h2>Web Development</h2>
+                      <p>HTML, CSS, JS, Vue</p>
+                      <p>Node</p>
+                      <p>React</p>
+                    </div>
+
+                    <div class="about-subc-2">
+                      <img src="./images/web/app dev.png" />
+                      <h2>App Development</h2>
+                      <p>Android Studios</p>
+                      <p>Learning Goal: Swift UI</p>
+                      <br />
+                    </div>
+
+                    <div class="about-subc-3">
+                      <img src="./images/web/ux ui.png" />
+                      <h2>UI/UX Design</h2>
+                      <p>Figma</p>
+                      <br />
+                      <br />
+                    </div>
+
+                    <div class="about-subc-4">
+                      <img src="./images/web/game dev.png" />
+                      <h2>Game Development</h2>
+                      <p>JS</p>
+                      <p>Learning Goal: Blender</p>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-container-4">
+                  <h2 class="about-c4-title">Other interests</h2>
+                </div>
+              </div>
+
+              <!-- Featured Projects -->
+              <div v-if="tab.id === 'featured'">
+                <div class="featured-top-container">
+                  <div class="left-container">
+                    <h1 data-aos="fade-right" data-aos-duration="2000">
+                      {{ currentImage.title }}
+                    </h1>
+                    <p data-aos="zoom-in-left" data-aos-duration="2000">
+                      {{ currentImage.description }}
+                    </p>
+                    <button class="view-nav" @click="scrollToSection">
+                      View More
+                    </button>
+                  </div>
+
+                  <div class="right-container">
+                    <div class="image-container">
+                      <img
+                        :src="currentImage.image"
+                        alt="Selected Project"
+                        class="featured-image"
+                      />
+
+                      <div class="nav">
+                        <button class="nav-buttons prev" @click="prevImage">
+                          &#8678;
+                        </button>
+                        <button class="nav-buttons next" @click="nextImage">
+                          &#8680;
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="content-preview">
+                      <img
+                        v-for="(project, index) in featuredProjectsData"
+                        :key="index"
+                        :src="project.image"
+                        :alt="project.title"
+                        class="featured-image-preview"
+                        :class="{ active: currentImageIndex === index }"
+                        @click="selectImage(index)"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="featured-bottom-container">
+                  <div id="lifeOfMe" class="target-section-LOM">
+                    <section class="timeline-wrapper">
+                      <div class="timeline">
+                        <div class="timeline-bar"></div>
+                        <!-- Content Containers -->
+                        <div class="container1">
+                          <div class="text-content">
+                            <h2>Life of Me</h2>
+                            <p><strong>Project Overview:</strong></p>
+                            <p>{{ getProject1().overview }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg1">
+                          <div class="text-content">
+                            <img src="./images/web/lifeOfMe1.png" />
+                          </div>
+                        </div>
+                        <div class="container2">
+                          <div class="text-content">
+                            <p>
+                              <strong>Technology Stack:</strong> <br />
+                              {{ getProject1().stack }}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="containerImg2">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container3">
+                          <div class="text-content">
+                            <p><strong>Development Process:</strong></p>
+                            <p>{{ getProject1().dev }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg3">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container4">
+                          <div class="text-content">
+                            <p><strong>Functionalities:</strong></p>
+                            <p>{{ getProject1().functionalities }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg4">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container5">
+                          <div class="text-content">
+                            <p><strong>UI and Experience:</strong></p>
+                            <p>{{ getProject1().ui }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg5">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container6">
+                          <div class="text-content">
+                            <p><strong>Future Plans:</strong></p>
+                            <p>{{ getProject1().future }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg6">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                      </div>
+                      <br class="line-break" />
+                      <p>
+                        <strong>Link to Medium:</strong>
+                        <a
+                          :href="currentImage.medium"
+                          class="link"
+                          target="_blank"
+                          >{{ getProject1().medium }}</a
+                        >
+                      </p>
+                    </section>
+                  </div>
+
+                  <div id="roommateShopping" class="target-section-RSL">
+                    <section class="timeline-wrapper">
+                      <div class="timeline">
+                        <div class="timeline-bar"></div>
+                        <!-- Content Containers -->
+                        <div class="container1">
+                          <div class="text-content">
+                            <h2>Roommate Shopping List</h2>
+                            <p><strong>Project Overview:</strong></p>
+                            <p>{{ getProject2().overview }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg1">
+                          <div class="text-content">
+                            <img src="./images/web/listApp.png" />
+                          </div>
+                        </div>
+                        <div class="container2">
+                          <div class="text-content">
+                            <p>
+                              <strong>Technology Stack:</strong> {{
+                              getProject2().stack }}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="containerImg2">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container3">
+                          <div class="text-content">
+                            <p><strong>Development Process:</strong></p>
+                            <p>{{ getProject2().dev }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg3">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container4">
+                          <div class="text-content">
+                            <p><strong>Functionalities:</strong></p>
+                            <p>{{ getProject2().functionalities }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg4">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container5">
+                          <div class="text-content">
+                            <p><strong>UI and Experience:</strong></p>
+                            <p>{{ getProject2().ui }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg5">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                        <div class="container6">
+                          <div class="text-content">
+                            <p><strong>Future Plans:</strong></p>
+                            <p>{{ getProject2().future }}</p>
+                          </div>
+                        </div>
+                        <div class="containerImg6">
+                          <div class="text-content">
+                            <img src="./images/web/placeholder.jpg" />
+                          </div>
+                        </div>
+                      </div>
+                      <br class="line-break" />
+                      <p>
+                        <strong>Link to Medium:</strong>
+                        <a :href="currentImage.medium" target="_blank"
+                          >{{ getProject2().medium }}</a
+                        >
+                      </p>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./javascript/taskbar.js"></script>
+    <script src="./javascript/web.js" defer></script>
+    <script src="./javascript/about.js"></script>
+    <script src="./javascript/timeline.js" defer></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100, 
+        });
+    </script> -->
+  </body>
+</html>

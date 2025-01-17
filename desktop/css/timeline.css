@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+.timeline-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline {
+    width: 1000px;
+    margin: 100px auto;
+    position: relative;
+}
+
+/* Timeline vertical line */
+.timeline::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 0;
+    height: 0;
+    width: 5px;
+    background: linear-gradient(#ff00e1, #ddff00);
+    border-radius: 50px;
+    transition: height 0.3s ease-out;
+    bottom: -20px;
+}
+
+/* Timeline bar animation */
+.timeline-bar {
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 5px;
+    height: 0;
+    background: linear-gradient(#ff00e1, #ddff00);
+    border-radius: 50px;
+    opacity: 0;
+    transition: height 1.5s ease-out, opacity 1.2s ease-out;
+}
+
+/* Individual containers */
+.container1,
+.container2,
+.container3,
+.container4,
+.container5,
+.container6,
+.containerImg1,
+.containerImg2,
+.containerImg3,
+.containerImg4,
+.containerImg5,
+.containerImg6 {
+    width: 50%;
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 0.6s ease-out;
+    z-index: 1;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.container2,
+.container4,
+.container6 {
+    right: -50%;
+}
+
+/* Bullets for even and odd containers */
+.container1:nth-child(even)::before,
+.container1:nth-child(odd)::before,
+
+.container2:nth-child(even)::before,
+.container2:nth-child(odd)::before,
+
+.container3:nth-child(even)::before,
+.container3:nth-child(odd)::before,
+
+.container4:nth-child(even)::before,
+.container4:nth-child(odd)::before,
+
+.container5:nth-child(even)::before,
+.container5:nth-child(odd)::before,
+
+.container6:nth-child(even)::before,
+.container6:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: linear-gradient(#ff00e1, #ddff00);
+    top: 0;
+    border-radius: 50%;
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-out, transform 0.5s ease-out;
+}
+
+.container1:nth-child(even)::before,
+.container3:nth-child(even)::before,
+.container5:nth-child(even)::before {
+    left: 97.5%;
+}
+
+.container2:nth-child(even)::before,
+.container4:nth-child(even)::before,
+.container6:nth-child(even)::before {
+    right: 98.5%;
+}
+
+/* When the container is visible, show the bullets */
+.container1.in-view::before,
+.container2.in-view::before,
+.container3.in-view::before,
+.container4.in-view::before,
+.container5.in-view::before,
+.container6.in-view::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Text content styles */
+.text-content {
+    padding: 20px 30px;
+    box-shadow: 0px 1px 10px #1b1b1b;
+    line-height: 1.5;
+    border-radius: 10px;
+    display: grid;
+    gap: 5px;
+}
+
+.text-content h2 {
+    font-size: 25px;
+}
+
+.text-content p {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+/* Animation for visible containers */
+.container1.in-view,
+.container2.in-view,
+.container3.in-view,
+.container4.in-view,
+.container5.in-view,
+.container6.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#roommateShopping {
+    margin-top: 50px;
+}
+
+/* Img containers */
+.containerImg1.in-view {
+    opacity: 0;
+    transform: translateY(-80%);
+    margin-bottom: -230px;
+    transition: opacity 1s ease-in-out;
+}
+
+.containerImg2.in-view {
+    opacity: 0;
+    transform: translateY(-10%);
+    margin-bottom: 50px;
+    transition: opacity 1s ease-in-out;
+}
+
+.containerImg3.in-view {
+    opacity: 0;
+    transform: translateY(-40%);
+    margin-bottom: -60px;
+    transition: opacity 1s ease-in-out;
+}
+
+.containerImg4.in-view {
+    opacity: 0;
+    transform: translateY(-25%);
+    transition: opacity 1s ease-in-out;
+}
+
+.containerImg5.in-view {
+    opacity: 0;
+    transform: translateY(-25%);
+    transition: opacity 1s ease-in-out;
+}
+
+.containerImg6.in-view {
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 1s ease-in-out;
+}
+
+.containerImg1,
+.containerImg3,
+.containerImg5 {
+    right: -50%;
+}
+
+.containerImg1 img,
+.containerImg2 img,
+.containerImg3 img,
+.containerImg4 img,
+.containerImg5 img,
+.containerImg6 img {
+    width: 100%;
+    height: auto;
+}
+
+.container1:hover,
+.container2:hover,
+.container3:hover,
+.container4:hover,
+.container5:hover,
+.container6:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+
+/* Affect to fade in img containers */
+.container1:hover~.containerImg1,
+.container2:hover~.containerImg2,
+.container3:hover~.containerImg3,
+.container4:hover~.containerImg4,
+.container5:hover~.containerImg5,
+.container6:hover~.containerImg6 {
+    opacity: 1;
+}
+
+/* Persistent images that stay visible */
+.containerImg1.persistent,
+.containerImg2.persistent,
+.containerImg3.persistent,
+.containerImg4.persistent,
+.containerImg5.persistent,
+.containerImg6.persistent {
+    opacity: 1 !important;
+    transition: opacity 0s;
+}
+
+.line-break {
+    
+}
