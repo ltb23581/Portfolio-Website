@@ -14,8 +14,11 @@ body {
 /* tab styling and top bar */
 .tabs-container {  
     display: flex;
-    position: relative;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
     align-items: center;
+    background: rgb(40, 40, 43);
 }
 
 .tabs {  /* outer tab styling */

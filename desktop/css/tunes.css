@@ -1,0 +1,49 @@
+.tunes-container {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    top: 0;
+    align-items: center;
+    background: rgb(40, 40, 43);
+}
+
+.track {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.3s;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.track:hover {
+    background-color: #7a8da1;
+    color: white;
+    transform: translateY(-5px); 
+}
+
+#juke {
+    margin-top: 20px;
+    width: 300px;
+}
+
+audio {
+    width: 100%;
+}
+
+button .tunes {
+    width: 70px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button:hover .tunes-button{
+    background-color: #7a8da1;
+    transition: background-color 0.3s;
+}

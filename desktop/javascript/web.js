@@ -73,7 +73,7 @@ const app = Vue.createApp({
           /* whole project details below */
           overview:
             "Roommate Shopping is an app designed to simplify shopping and expense tracking for roommates. Developed as a final project for my Mobile Software Development course, the app allows users to create and manage shared shopping lists, track purchases, and calculate expenses. With Firebase integration for real-time data synchronization, it ensures smooth collaboration and easy expense management among roommates.",
-          stack: "HTML, CSS, JavaScript, Firebase",
+          stack: "Java, Firebase, Android Studio",
           dev: "The app enables user registration, shared shopping lists, and the ability to mark and settle purchases. Users can track individual expenses and get a summary of costs per roommate. Built using Firebase for real-time data syncing, the app also includes secure login and responsive design for optimal usability across devices.",
           functionalities:
             "User registration, shared shopping lists, purchase tracking, expense calculation, real-time data synchronization. Users can add, mark, and settle purchases, with a summary of costs per roommate.",

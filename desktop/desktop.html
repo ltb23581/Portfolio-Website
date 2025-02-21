@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/about.css" />
     <link rel="stylesheet" href="./css/featured.css" />
     <link rel="stylesheet" href="./css/timeline.css" />
+    <link rel="stylesheet" href="./css/lom.css" />
+    <link rel="stylesheet" href="./css/tunes.css" />
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <title>Lindsay's Desktop</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -66,6 +68,26 @@
         title="Tunes"
       />
     </div>
+
+    <!-- Tunes Popup -->
+    <div class="popup" id="tunesPopup">
+      <div class="popup-content">
+        <!-- Top Bar -->
+        <div class="top">
+          <div class="title">Tunes</div>
+          <span class="close-popup" id="closeTunesPopup">&times;</span>
+        </div>
+        <div class="tunes-container">
+          <h1>Jamboree Jukebox</h1>
+          <h6>(Apple Itunes API)</h6>
+          <input type="text" id="searchInput" placeholder="Input a song title" />
+          <button class="tunes-button"onclick="searchMusic()">Search</button>
+      
+          <div id="results"></div>
+          <div id="juke"></div>
+        </div>
+      </div>
+    </div>    
 
     <!-- Files Popup -->
     <div class="popup" id="filePopup">
@@ -195,87 +217,98 @@
                 </div>
 
                 <!-- Beginning of bottom content -->
-                <div class="about-container-2">
-                  <div class="about-c2-left">
-                    <img src="./images/web/placeholder.jpg" />
-                  </div>
-
-                  <div class="about-c2-right">
-                    <h4>About Me</h4>
-                    <h2>I'm a Computer Science student</h2>
-                    <p>
-                      Welcome to my portfolio! My name is Lindsay Bui, and I am
-                      a third-year computer science student concentrating in
-                      software design at the University of Georgia. Alongside my
-                      major, I am pursuing the New Media Certificate
-                      (Development track) and am a member of the UGA CyberArch
-                      Academy.
-                    </p>
-                    <p>
-                      In addition to my passion for technology, I also have a
-                      love for learning about different cultures. Through high
-                      school to now, I studied Spanish for one year and Japanese
-                      and Korean for two. I am of Vietnamese descent; however, I
-                      wasn't fully taught the language growing up, so I only
-                      know basic vocabulary and conversation. Currently, my
-                      strongest language, aside from English (which is my native
-                      language), is Korean. During the Spring 2025 term, I plan
-                      to study at Korea University to strengthen my cultural and
-                      language skills while continuing my studies in computer
-                      science.
-                    </p>
-                    <p>
-                      Growing up in a household of six, I was always known as
-                      the "creative child." When it came time to choose a major,
-                      I found myself torn between two options: architecture and
-                      computer science. I loved art and design but also dreamed
-                      of pursuing coding. Ultimately, I chose computer science,
-                      a field that allows me to blend my creative passion with
-                      my technical skills in web, app, and game development.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="about-container-3">
-                  <h2 class="about-c3-title">What I'm interested in</h2>
-                  <!-- Subcontainers -->
-                  <div class="subcontainers">
-                    <div class="about-subc-1">
-                      <img src="./images/web/web dev.png" />
-                      <h2>Web Development</h2>
-                      <p>HTML, CSS, JS, Vue</p>
-                      <p>Node</p>
-                      <p>React</p>
+                <div class="background-wrapper">
+                  <div class="about-container-2">
+                    <div class="about-c2-left">
+                      <img src="./images/web/aboutpfp.jpg" />
                     </div>
 
-                    <div class="about-subc-2">
-                      <img src="./images/web/app dev.png" />
-                      <h2>App Development</h2>
-                      <p>Android Studios</p>
-                      <p>Learning Goal: Swift UI</p>
-                      <br />
-                    </div>
-
-                    <div class="about-subc-3">
-                      <img src="./images/web/ux ui.png" />
-                      <h2>UI/UX Design</h2>
-                      <p>Figma</p>
-                      <br />
-                      <br />
-                    </div>
-
-                    <div class="about-subc-4">
-                      <img src="./images/web/game dev.png" />
-                      <h2>Game Development</h2>
-                      <p>JS</p>
-                      <p>Learning Goal: Blender</p>
-                      <br />
+                    <div class="about-c2-right">
+                      <h4>About Me</h4>
+                      <h2>I'm a Computer Science student</h2>
+                      <p>
+                        Welcome to my portfolio! My name is Lindsay Bui, and I
+                        am a third-year computer science student concentrating
+                        in software design at the University of Georgia.
+                        Alongside my major, I am pursuing the New Media
+                        Certificate (Development track) and am a member of the
+                        UGA CyberArch Academy. Additionally, I recently became
+                        an NMI Xpert where I get to help peers with
+                        troubleshooting, debugging, and improving their projects
+                        in web and app dev.
+                      </p>
+                      <p>
+                        In addition to my passion for technology, I also have a
+                        love for learning about different cultures. Through high
+                        school to now, I studied Spanish for one year and
+                        Japanese and Korean for two. I am of Vietnamese descent;
+                        however, I wasn't fully taught the language growing up,
+                        so I only know basic vocabulary and conversation.
+                        Currently, my strongest language, aside from English
+                        (which is my native language), is Korean. During the
+                        Spring 2025 term, I plan to study at Korea University to
+                        strengthen my cultural and language skills while
+                        continuing my studies in computer science.
+                      </p>
+                      <p>
+                        Growing up in a household of six, I was always known as
+                        the "creative child." When it came time to choose a
+                        major, I found myself torn between two options:
+                        architecture and computer science. I loved art and
+                        design but also dreamed of pursuing coding. Ultimately,
+                        I chose computer science, a field that allows me to
+                        blend my creative passion with my technical skills in
+                        web, app, and game development.
+                      </p>
+                      <p>
+                        This portfolio website is a work in progress, but I hope
+                        you will stay tuned for the finished product! Thank you
+                        for your support! <3
+                      </p>
                     </div>
                   </div>
-                </div>
 
-                <div class="about-container-4">
-                  <h2 class="about-c4-title">Other interests</h2>
+                  <div class="about-container-3">
+                    <h2 class="about-c3-title">What I'm interested in</h2>
+                    <!-- Subcontainers -->
+                    <div class="subcontainers">
+                      <div class="about-subc-1">
+                        <img src="./images/web/web dev.png" />
+                        <h2>Web Development</h2>
+                        <p>HTML, CSS, JS, Vue</p>
+                        <p>Node</p>
+                        <p>React</p>
+                      </div>
+
+                      <div class="about-subc-2">
+                        <img src="./images/web/app dev.png" />
+                        <h2>App Development</h2>
+                        <p>Android Studios</p>
+                        <p>Learning Goal: Swift UI</p>
+                        <br />
+                      </div>
+
+                      <div class="about-subc-3">
+                        <img src="./images/web/ux ui.png" />
+                        <h2>UI/UX Design</h2>
+                        <p>Figma</p>
+                        <br />
+                        <br />
+                      </div>
+
+                      <div class="about-subc-4">
+                        <img src="./images/web/game dev.png" />
+                        <h2>Game Development</h2>
+                        <p>JS</p>
+                        <p>Learning Goal: Blender</p>
+                        <br />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="about-container-4">
+                    <h2 class="about-c4-title">Other interests</h2>
+                  </div>
                 </div>
               </div>
 
@@ -283,15 +316,34 @@
               <div v-if="tab.id === 'featured'">
                 <div class="featured-top-container">
                   <div class="left-container">
-                    <h1 data-aos="fade-right" data-aos-duration="2000">
-                      {{ currentImage.title }}
-                    </h1>
-                    <p data-aos="zoom-in-left" data-aos-duration="2000">
-                      {{ currentImage.description }}
-                    </p>
-                    <button class="view-nav" @click="scrollToSection">
-                      View More
-                    </button>
+                    <h1>{{ currentImage.title }}</h1>
+                    <p class="desc-LOM">{{ currentImage.description }}</p>
+                    <div class="buttons-LOM">
+                      <button class="view-nav" @click="scrollToSection">
+                        View More
+                      </button>
+
+                      <button
+                        v-if="currentImage.title === 'Life of Me'"
+                        class="play-LOM"
+                      >
+                        Play Game
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- LOM Popup -->
+                  <!-- Popup -->
+                  <div class="lom-popup-overlay" style="display: none">
+                    <div class="lom-popup-content">
+                      <span class="lom-close-popup">&times;</span>
+                      <!-- Initially, the iframe src is empty -->
+                      <iframe
+                        id="lom-game-iframe"
+                        class="lom-game-iframe"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
                   </div>
 
                   <div class="right-container">
@@ -354,7 +406,7 @@
                         </div>
                         <div class="containerImg2">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/stack1.png" />
                           </div>
                         </div>
                         <div class="container3">
@@ -365,7 +417,7 @@
                         </div>
                         <div class="containerImg3">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/LOM-img4.png" />
                           </div>
                         </div>
                         <div class="container4">
@@ -376,7 +428,7 @@
                         </div>
                         <div class="containerImg4">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/LOM-img3.png" />
                           </div>
                         </div>
                         <div class="container5">
@@ -387,7 +439,7 @@
                         </div>
                         <div class="containerImg5">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/LOM-img5.png" />
                           </div>
                         </div>
                         <div class="container6">
@@ -398,7 +450,7 @@
                         </div>
                         <div class="containerImg6">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/LOM-img6.jpg" />
                           </div>
                         </div>
                       </div>
@@ -414,7 +466,9 @@
                       </p>
                     </section>
                   </div>
+                  <!--End of all Life of Me Details-->
 
+                  <!--Start of Roommate Shopping App details-->
                   <div id="roommateShopping" class="target-section-RSL">
                     <section class="timeline-wrapper">
                       <div class="timeline">
@@ -442,7 +496,7 @@
                         </div>
                         <div class="containerImg2">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/RS-img2.png" />
                           </div>
                         </div>
                         <div class="container3">
@@ -453,7 +507,7 @@
                         </div>
                         <div class="containerImg3">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/RS-img3.png" />
                           </div>
                         </div>
                         <div class="container4">
@@ -464,7 +518,7 @@
                         </div>
                         <div class="containerImg4">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/RS-img4.png" />
                           </div>
                         </div>
                         <div class="container5">
@@ -475,7 +529,7 @@
                         </div>
                         <div class="containerImg5">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/RS-img5.png" />
                           </div>
                         </div>
                         <div class="container6">
@@ -486,7 +540,7 @@
                         </div>
                         <div class="containerImg6">
                           <div class="text-content">
-                            <img src="./images/web/placeholder.jpg" />
+                            <img src="./images/web/LOM-img6.jpg" />
                           </div>
                         </div>
                       </div>
@@ -510,11 +564,7 @@
     <script src="./javascript/web.js" defer></script>
     <script src="./javascript/about.js"></script>
     <script src="./javascript/timeline.js" defer></script>
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            offset: 100, 
-        });
-    </script> -->
+    <script src="./javascript/lom.js"></script>
+    <script src="./javascript/tunes.js"></script>
   </body>
 </html>

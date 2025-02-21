@@ -107,6 +107,13 @@ body {
     cursor: pointer;
 }
 
+/* Tunes Popup Styling */
+.tunes-container {
+    width: 500px;
+    height: 400px;
+    background-color: pink;
+}
+
 /* Popup Files Styling */
 .file-grid {
     flex: 1;

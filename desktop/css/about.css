@@ -8,7 +8,7 @@
 /* top section */
 .about-container-1 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,9 +62,22 @@
     cursor: pointer;
 }
 
+.background-wrapper {
+    background: linear-gradient(
+        180deg,
+        black 30%,           
+        rgb(50, 50, 53) 70%, 
+        gray 90%,            
+        white 100%          
+    );
+    width: 100%;
+    min-height: 100vh; /* Ensure it covers the full height of all containers */
+    display: flex;
+    flex-direction: column;
+}
+
 /* bottom section - container 2 */
 .about-container-2 {
-    background-color: black;
     width: 100%;
     min-height: 100vh;
     color: white;
@@ -78,9 +91,8 @@
 /* left side */
 .about-c2-left {
     width: 40%;
-    height: 100vh;
+    min-height: 70vh;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -92,7 +104,7 @@
 /* right side - content */
 .about-c2-right {
     width: 100%;
-    height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,18 +130,18 @@
 .about-container-3 {
     width: 100%;
     min-height: 100vh;
-    background-color: rgb(50, 50, 53);
     color: white;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-content: center;
 }
 
 .about-c3-title, .about-c4-title {
     font-size: 30px;
     font-weight: bolder;
     padding: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 /* sub containers */
@@ -137,7 +149,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 50px;
+    gap: 200px;
     margin-bottom: 10%;
 }
 
@@ -193,15 +205,12 @@
 
 /* bottom section - container 4 */
 .about-container-4 {
-    background-color: black;
     width: 100%;
     min-height: 100vh;
     color: white;
     display: flex;
     justify-content: center;
 }
-
-
 
 
 /* different display sizing */
@@ -215,11 +224,6 @@
         width: 100%;
         height: auto;
         margin-bottom: 20px;
-    }
-
-    .about-c2-left img {
-        width: 100%;
-        height: 50%; 
     }
 
     .about-c2-right {
@@ -249,12 +253,6 @@
         width: 50%;
     }
 
-    .about-c2-left img {
-        width: 100%;
-        height: 50%;
-        margin-top: -120%;
-    }
-
     .about-c2-right {
         padding: 5vw;
         margin-top: -80%;
@@ -281,11 +279,6 @@
     .about-c2-left {
         width: 45%;
         margin-bottom: 20px;
-    }
-
-    .about-c2-left img {
-        width: 90%;
-        height: 50%;    
     }
 
     .about-c2-right {
@@ -321,12 +314,6 @@
         width: 40%;
     }
 
-    .about-c2-left img {
-        width: 70%;
-        height: 50%;
-        margin-top: -90%;
-    }
-
     .about-c2-right {
         padding: 5vw;
         margin-top: -40%;
@@ -360,11 +347,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .about-c2-left img {
-        width: 70%;
-        height: 60%; 
     }
 
     .about-c2-right {
