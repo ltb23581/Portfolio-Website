@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function showLomPopup() {
       if (lomPopupOverlay && gameIframe) {
         lomPopupOverlay.style.display = "flex"; // Display popup as a flex container
-        gameIframe.src = "/desktop/LOM game/index.html"; // Set the game URL when popup is shown
+        gameIframe.src = "/desktop/lom/index.html"; // Set the game URL when popup is shown
       }
     }
 

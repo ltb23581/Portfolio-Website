@@ -150,8 +150,8 @@ function createVerticalWall(walls, x, startY, endY) {
 
 window.OverworldMaps = {
   DemoRoom: {
-    lowerSrc: "/desktop/LOM game/images/maps/DemoLower.png",
-    upperSrc: "/desktop/LOM game/images/maps/DemoUpper.png",
+    lowerSrc: "/desktop/lom/images/maps/DemoLower.png",
+    upperSrc: "/desktop/lom/images/maps/DemoUpper.png",
     gameObjects: {
       me: new Person({ // this is my character! 
         isPlayerControlled: true,
@@ -161,7 +161,7 @@ window.OverworldMaps = {
       npcA: new Person({ // blonde haired girl with green shirt 
         x: utils.withGrid(10),
         y: utils.withGrid(4),
-        src: "/desktop/LOM game/images/characters/people/npc1.png",
+        src: "/desktop/lom/images/characters/people/npc1.png",
         behaviorLoop: [
 
           { type: "stand", direction: "down", time: 1500 },
@@ -191,7 +191,7 @@ window.OverworldMaps = {
       npcB: new Person({ // blonder haired boy with white shirt and blue strips 
         x: utils.withGrid(4),
         y: utils.withGrid(7),
-        src: "/desktop/LOM game/images/characters/people/npc3.png",
+        src: "/desktop/lom/images/characters/people/npc3.png",
         behaviorLoop: [
 
           { type: "stand", direction: "down", time: 1000 },
@@ -276,8 +276,8 @@ window.OverworldMaps = {
     }
   },
   Street: {
-    lowerSrc: "/desktop/LOM game/images/maps/StreetLower.png",
-    upperSrc: "/desktop/LOM game/images/maps/StreetUpper.png",
+    lowerSrc: "/desktop/lom/images/maps/StreetLower.png",
+    upperSrc: "/desktop/lom/images/maps/StreetUpper.png",
     gameObjects: {
       me: new Person({
         isPlayerControlled: true,
@@ -287,7 +287,7 @@ window.OverworldMaps = {
       npcA: new Person({
         x: utils.withGrid(4),
         y: utils.withGrid(10),
-        src: "/desktop/LOM game/images/characters/people/npc2.png",
+        src: "/desktop/lom/images/characters/people/npc2.png",
         behaviorLoop: [
           { type: "stand", direction: "down", time: 1500 },
           { type: "stand", direction: "right", time: 1400 },
@@ -309,7 +309,7 @@ window.OverworldMaps = {
       npcB: new Person({
         x: utils.withGrid(13),
         y: utils.withGrid(9),
-        src: "/desktop/LOM game/images/characters/people/npc4.png",
+        src: "/desktop/lom/images/characters/people/npc4.png",
         behaviorLoop: [
           { type: "stand", direction: "down", time: 1300 },
           { type: "stand", direction: "left", time: 1400 },
@@ -359,7 +359,7 @@ window.OverworldMaps = {
       npcC: new Person({
         x: utils.withGrid(4),
         y: utils.withGrid(15),
-        src: "/desktop/LOM game/images/characters/people/npc5.png",
+        src: "/desktop/lom/images/characters/people/npc5.png",
         behaviorLoop: [
           { type: "walk", direction: "right" },
           { type: "walk", direction: "right" },
@@ -443,7 +443,7 @@ window.OverworldMaps = {
       npcD: new Person({
         x: utils.withGrid(25),
         y: utils.withGrid(5),
-        src: "/desktop/LOM game/images/characters/people/npc8.png",
+        src: "/desktop/lom/images/characters/people/npc8.png",
         behaviorLoop: [
 
         ],
@@ -475,7 +475,7 @@ window.OverworldMaps = {
       npcE: new Person({
         x: utils.withGrid(29),
         y: utils.withGrid(10),
-        src: "/desktop/LOM game/images/characters/people/npc6.png",
+        src: "/desktop/lom/images/characters/people/npc6.png",
         behaviorLoop: [
 
         ],
@@ -505,7 +505,7 @@ window.OverworldMaps = {
       npcF: new Person({
         x: utils.withGrid(24),
         y: utils.withGrid(9),
-        src: "/desktop/LOM game/images/characters/people/npc7.png",
+        src: "/desktop/lom/images/characters/people/npc7.png",
         behaviorLoop: [
           { who: "npcF", type: "walk", direction: "left" },
           { who: "npcF", type: "walk", direction: "left" },

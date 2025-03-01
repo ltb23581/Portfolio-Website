@@ -46,7 +46,7 @@ html, body {
     justify-content: center; 
     align-items: center; 
     position: absolute;
-    top: 58%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     gap: 50px; 
