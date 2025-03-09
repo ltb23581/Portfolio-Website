@@ -1,15 +1,59 @@
-.tunes-container {
-    display: flex;
-    position: sticky;
-    width: 100%;
-    height: auto;
-    z-index: 1000;
-    top: 0;
-    align-items: center;
-    background: rgb(40, 40, 43);
+body, html {
+    padding: 0;
+    margin: 0;
 }
 
-.track {
+.popup#tunesPopup .popup-content {
+    width: 100%;
+    height: calc(100vh - 40px);  
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500; 
+}
+
+#closeTunesPopup {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tunes-container {
+    display: flex;
+    flex-direction: row;  
+    height: 100vh;
+}
+
+.tunes-left-panel {
+    width: 30%; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 20px;
+    gap: 10px;
+}
+
+.tunes-right-panel {
+    width: 70%; 
+    height: 100vh;
+    /* background: lightblue; */
+    display: flex;
+}
+
+.tunes-left-panel h3:hover {
+    background-color: rgb(57, 57, 57);
+    width: 90%;
+    height: 20px;
+    display: flex;
+}
+
+/* .track {
     margin: 5px;
     padding: 10px;
     border: 1px solid black;
@@ -46,4 +90,4 @@ button .tunes {
 button:hover .tunes-button{
     background-color: #7a8da1;
     transition: background-color 0.3s;
-}
+} */

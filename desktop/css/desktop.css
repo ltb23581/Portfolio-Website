@@ -111,7 +111,7 @@ body {
 .tunes-container {
     width: 500px;
     height: 400px;
-    background-color: pink;
+    background: rgb(30, 30, 33);
 }
 
 /* Popup Files Styling */

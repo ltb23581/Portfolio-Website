@@ -69,7 +69,7 @@ function login(event) {
             const userData = snapshot.val();
             if (userData.password === password) {
                 // Redirect to desktop folder's desktop.html
-                window.location.href = "loadingScreen.html";
+                window.location.href = "/login/loadingScreen.html";
             } else {
                 alert('Incorrect password. Try again!');
             }

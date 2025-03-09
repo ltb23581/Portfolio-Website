@@ -105,7 +105,7 @@ function logout(event) {
   event.preventDefault();
   sessionStorage.clear();
   localStorage.clear();
-  window.location.href = "/login/login.html";
+  window.location.href = "/index.html";
 }
 
 // Function to make a popup draggable

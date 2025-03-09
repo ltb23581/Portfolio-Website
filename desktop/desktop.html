@@ -77,17 +77,35 @@
           <div class="title">Tunes</div>
           <span class="close-popup" id="closeTunesPopup">&times;</span>
         </div>
-        <!-- <div class="tunes-container">
-          <h1>Jamboree Jukebox</h1>
-          <h6>(Apple Itunes API)</h6>
-          <input type="text" id="searchInput" placeholder="Input a song title" />
-          <button class="tunes-button"onclick="searchMusic()">Search</button>
-      
-          <div id="results"></div>
-          <div id="juke"></div>
-        </div> -->
+
+        <div class="tunes-container">
+          <div class="tunes-left-panel">
+            <h3 class="tunes-search">Search</h3>
+            <h3 class="tunes-library">My Library</h3>
+          </div>
+
+          <div class="tunes-right-panel">
+            <div class="search-right-panel"></div>
+
+            <div class="library-right-panel">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Input a song title"
+              />
+              <button class="tunes-button" onclick="searchMusic()">
+                Search
+              </button>
+
+              <div id="results"></div>
+              <div id="juke"></div>
+            </div>
+          </div>
+
+          <!-- <h6>(Apple Itunes API)</h6> -->
+        </div>
       </div>
-    </div>    
+    </div>
 
     <!-- Files Popup -->
     <div class="popup" id="filePopup">
@@ -561,6 +579,7 @@
       </div>
     </div>
     <script src="./javascript/taskbar.js"></script>
+    <script src="./javascript/logout.js"></script>
     <script src="./javascript/web.js" defer></script>
     <script src="./javascript/about.js"></script>
     <script src="./javascript/timeline.js" defer></script>
